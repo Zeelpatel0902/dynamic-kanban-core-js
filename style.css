@@ -1,0 +1,116 @@
+/* ========== Base / Reset ========== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #0f172a;          /* deep slate */
+  color: #e5e7eb;               /* light text */
+}
+
+/* ========== Header ========== */
+header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #334155;
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(6px);
+}
+header h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Task Form ========== */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #334155;
+  background: #0b1220;
+}
+.task-form input {
+  flex: 1 1 220px;
+  min-width: 220px;
+  padding: 10px 12px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #111827;
+  color: #e5e7eb;
+}
+.task-form button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #22d3ee; /* cyan */
+  color: #062025;
+}
+.task-form button:hover { filter: brightness(1.05); }
+
+/* ========== Board Layout ========== */
+.board {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
+/* ========== Columns ========== */
+.column {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.6);
+  overflow: hidden;
+}
+
+.column h2 {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 16px;
+  color: #86efac; /* green accent */
+  border-bottom: 1px solid #334155;
+  background: linear-gradient(180deg, rgba(16,185,129,0.08), rgba(0,0,0,0));
+}
+
+.task-list {
+  min-height: 240px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ========== Cards ========== */
+.card {
+  background: #1f2937;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: grab;
+}
+.card:active { cursor: grabbing; }
+.card h3 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+}
+.card p {
+  margin: 0;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* Drag-over highlight */
+.task-list.drag-over {
+  outline: 2px dashed #22d3ee;
+  outline-offset: 3px;
+}
+
+/* ========== Responsive tweak ========== */
+@media (max-width: 900px) {
+  .board { grid-template-columns: 1fr; }
+}

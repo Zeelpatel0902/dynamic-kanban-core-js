@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Kanban Board</h1>
+    </header>
+
+    <!-- Task creation form -->
+    <section class="task-form" aria-label="Add a new task">
+        <input type="text" id="task-title" placeholder="Task title" required />
+        <input type="text" id="task-desc" placeholder="Task description" />
+        <button id="add-task-btn" aria-label="Add Task">Add Task</button>
+    </section>
+
+    <!-- Board -->
+    <main class="board" id="board" aria-label="Kanban Board">
+        <div class="column" data-status="todo" aria-label="To Do Column">
+            <h2>To Do</h2>
+            <div class="task-list" id="todo"></div>
+        </div>
+
+        <div class="column" data-status="inprogress" aria-label="In Progress Column">
+            <h2>In Progress</h2>
+            <div class="task-list" id="in-progress"></div>
+        </div>
+
+        <div class="column" data-status="done" aria-label="Done Column">
+            <h2>Done</h2>
+            <div class="task-list" id="done"></div>
+        </div>
+    </main>
+
+    <!-- Scripts: keep this exact order (no type="module") -->
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/dnd.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
