@@ -26,5 +26,4 @@ Use a local server:
 - VS Code → **Live Server** (right-click `index.html` → Open with Live Server)  
 - Or: `python -m http.server 8000` → open http://localhost:8000
 
-## Notes on Approach (GPT-aided)
-I designed the architecture (file breakdown & responsibilities), then used GPT to speed up boilerplate. I refactored into globals (no ES modules), renamed variables, added comments, and tested drag/drop + persistence. I can extend features (edit/delete, search, labels, due dates) without major rewrites due to the separation of concerns.
+
